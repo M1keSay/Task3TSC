@@ -1,4 +1,3 @@
-// Перечисление для типа документа
 enum TypeOfDocument {
     Passport = "Паспорт",
     IDCard = "ID карты",
@@ -15,7 +14,6 @@ interface Owner {
     printInfoOwner(): void;
 }
 
-// Класс, реализующий интерфейс Владелец
 class OwnerClass implements Owner {
     private surname: string;
     private name: string;
@@ -104,7 +102,6 @@ class OwnerClass implements Owner {
     }
 }
 
-// Интерфейс Транспортное средство
 interface Vehicle {
     get Mark(): string;
     get Model(): string;
@@ -115,7 +112,6 @@ interface Vehicle {
     printInfo(): void;
 }
 
-// Класс, реализующий интерфейс Транспортное средство
 class VehicleImpl implements Vehicle {
     private mark: string;
     private model: string;
@@ -202,7 +198,6 @@ interface Car extends Vehicle {
     ClassOfCar: CarClass;
 }
 
-// Класс, реализующий интерфейс Автомобиль
 class CarImpl extends VehicleImpl implements Car {
     private typeOfBody: BodyType;
     private classOfCar: CarClass;
@@ -234,13 +229,11 @@ class CarImpl extends VehicleImpl implements Car {
     }
 }
 
-// Интерфейс Мотоцикл
 interface Motorbike extends Vehicle {
     FrameType: string;
     IsForSport: boolean;
 }
 
-// Класс, реализующий интерфейс Мотоцикл
 class MotorbikeImpl extends VehicleImpl implements Motorbike {
     private frameType: string;
     private isForSport: boolean;
