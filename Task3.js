@@ -13,13 +13,11 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// Перечисление для типа документа
 var TypeOfDocument;
 (function (TypeOfDocument) {
     TypeOfDocument["Passport"] = "\u041F\u0430\u0441\u043F\u043E\u0440\u0442";
     TypeOfDocument["IDCard"] = "ID \u043A\u0430\u0440\u0442\u044B";
 })(TypeOfDocument || (TypeOfDocument = {}));
-// Класс, реализующий интерфейс Владелец
 var OwnerClass = /** @class */ (function () {
     function OwnerClass(surname, name, patronymic, birthDate, documentType, documentSeries, documentNumber) {
         this.surname = surname;
@@ -112,7 +110,6 @@ var OwnerClass = /** @class */ (function () {
     };
     return OwnerClass;
 }());
-// Класс, реализующий интерфейс Транспортное средство
 var VehicleImpl = /** @class */ (function () {
     function VehicleImpl(brand, model, year, vin, registrationNumber, owner) {
         this.mark = brand;
@@ -234,7 +231,6 @@ var CarImpl = /** @class */ (function (_super) {
     };
     return CarImpl;
 }(VehicleImpl));
-// Класс, реализующий интерфейс Мотоцикл
 var MotorbikeImpl = /** @class */ (function (_super) {
     __extends(MotorbikeImpl, _super);
     function MotorbikeImpl(brand, model, year, vin, registrationNumber, owner, frameType, isForSport) {
@@ -264,7 +260,6 @@ var MotorbikeImpl = /** @class */ (function (_super) {
     };
     return MotorbikeImpl;
 }(VehicleImpl));
-// Класс, реализующий интерфейс Хранилище
 var VehicleStorageImpl = /** @class */ (function () {
     function VehicleStorageImpl() {
         this.creationDate = new Date();
@@ -295,7 +290,6 @@ var VehicleStorageImpl = /** @class */ (function () {
     };
     return VehicleStorageImpl;
 }());
-// Пример использования
 var owner1 = new OwnerClass("Капранов", "Василий", "Генадьевич", new Date(1990, 1, 1), TypeOfDocument.Passport, "1234", "567890");
 var car1 = new CarImpl("Toyota", "Camry", 2020, "QWERTYU789632", "ABC123", owner1, BodyType.Sedan, CarClass.Luxury);
 var motorbike1 = new MotorbikeImpl("Yamaha", "YZF-R1", 2021, "SRFGGDFGHYHB8889", "XYZ789", owner1, "Sport", true);
